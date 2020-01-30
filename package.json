@@ -4,8 +4,12 @@
   "description": "Web app to track inr results",
   "main": "src/server.js",
   "scripts": {
-    "test": "export NODE_ENV=test"
+    "test": "export NODE_ENV=test",
+    "start": "node src/server.js"
   },
   "author": "Laura Meehan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
