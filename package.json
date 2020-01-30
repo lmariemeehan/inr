@@ -1,0 +1,11 @@
+{
+  "name": "inr",
+  "version": "1.0.0",
+  "description": "Web app to track inr results",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "export NODE_ENV=test"
+  },
+  "author": "Laura Meehan",
+  "license": "ISC"
+}
