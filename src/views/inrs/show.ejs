@@ -31,22 +31,12 @@
 
   <main class="container">
 
-    <h1 class="mt-4" >Enter New Inr Result</h1>
-
-    <form action="/inrs/create" method="post">
-      <div class="form-group">
-        <label for="inrdate">Date:</label>
-        <input type="date" name="inrdate">
-      </div>
-      <div class="form-group">
-        <label for="result">INR result</label>
-        <input type="text" class="form-control" name="result" aria-describedby="resultHelp" placeholder="Enter Result">
-      </div>
-      <div class="form-group">
-        <label for="notes">Notes</label>
-        <textarea name="notes" rows="4" class="form-control" placeholder="Enter notes regarding inr results"></textarea>
-        <button type="submit" class="btn btn-primary mt-2">Submit</button>
-      </div>
+    <h1 class="mt-4"><%= inr.date %></h1>
+    <p><%= inr.result %></p>
+    <p><%= inr.notes %></p>
+    <a href="/inrs/<%= inr.id %>/edit" class="btn btn-warning">Edit</a>
+    <form style="display:initial" action="/inrs/<%= inr.id %>/destroy" method="post">
+      <button type="submit" class="btn btn-danger">Delete</button>
     </form>
 
   </main>

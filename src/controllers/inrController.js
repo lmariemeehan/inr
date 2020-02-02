@@ -17,7 +17,7 @@ module.exports = {
   new(req, res, next){
     res.render("inrs/new");
   },
-  
+
   create(req, res, next){
     let newInr = {
       date: req.body.date,
@@ -31,5 +31,36 @@ module.exports = {
         res.redirect(303, `/inrs/${inr.id}`);
       }
     });
+  },
+
+  show(req, res){
+    inrQueries.getInr(req.params.id, (err, inr) => {
+      if(err || inr == null){
+        res.redirect(404, "/");
+      } else {
+        res.render("inrs/show", {inr});
+      }
+    });
+  },
+
+  destroy(req, res, next){
+    inrQueries.deleteInr(req.params.id, (err, inr) => {
+      if(err){
+        res.redirect(500, `/inrs/${inr.id}`)
+      } else {
+        res.redirect(303, "/inrs")
+      }
+    });
+  },
+
+  edit(req, res, next){
+    inrQueries.getInr(req.params.id, (err, inr) => {
+      if(err || inr == null){
+        res.redirect(404, "/");
+      } else {
+        res.render("inrs/edit", {inr});
+      }
+    });
   }
+
 }

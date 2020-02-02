@@ -31,21 +31,21 @@
 
   <main class="container">
 
-    <h1 class="mt-4" >Enter New Inr Result</h1>
+    <h1 class="mt-4">Edit Inr Result</h1>
 
-    <form action="/inrs/create" method="post">
+    <form action="/inrs/<%= inr.id %>/update" method="post">
       <div class="form-group">
         <label for="inrdate">Date:</label>
-        <input type="date" name="inrdate">
+        <input value="<%= inr.date %>" type="date" name="inrdate">
       </div>
       <div class="form-group">
         <label for="result">INR result</label>
-        <input type="text" class="form-control" name="result" aria-describedby="resultHelp" placeholder="Enter Result">
+        <input value="<%= inr.result %>" type="text" class="form-control" name="result" aria-describedby="resultHelp" placeholder="Enter Result">
       </div>
       <div class="form-group">
         <label for="notes">Notes</label>
-        <textarea name="notes" rows="4" class="form-control" placeholder="Enter notes regarding inr results"></textarea>
-        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        <textarea name="notes" rows="4" class="form-control" placeholder="Enter notes regarding inr results"><%= inr.notes %></textarea>
+        <button type="submit" class="btn btn-primary mt-2">Update</button>
       </div>
     </form>
 

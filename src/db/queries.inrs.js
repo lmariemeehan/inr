@@ -23,5 +23,28 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  getInr(id, callback){
+    return Inr.findByPk(id)
+    .then((inr) => {
+      callback(null, inr);
+    })
+    .catch((err) => {
+      callback(err);
+    })
+  },
+
+  deleteInr(id, callback){
+    return Inr.destroy({
+      where: {id}
+    })
+    .then((inr) => {
+      callback(null, inr);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
+
 }
