@@ -1,6 +1,9 @@
 const inrQueries = require("../db/queries.inrs.js");
+const Inr = require("../db/models").Inr;
+const Sequelize = require("sequelize");
 
 module.exports = {
+
   index(req, res, next) {
     inrQueries.getAllInrs((err, inrs) => {
       if(err){
@@ -10,9 +13,11 @@ module.exports = {
       }
     })
   },
+
   new(req, res, next){
     res.render("inrs/new");
   },
+  
   create(req, res, next){
     let newInr = {
       date: req.body.date,

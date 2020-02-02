@@ -3,7 +3,6 @@ const Inr = require("./models").Inr;
 module.exports = {
   getAllInrs(callback){
     return Inr.findAll()
-
     .then((inrs) => {
       callback(null, inrs);
     })

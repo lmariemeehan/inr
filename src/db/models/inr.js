@@ -1,8 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Inr = sequelize.define('Inr', {
-    date: DataTypes.DATE,
-    result: DataTypes.FLOAT,
+  var Inr = sequelize.define('Inr', {
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    result: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
     notes: DataTypes.STRING
   }, {});
   Inr.associate = function(models) {
