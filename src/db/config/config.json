@@ -5,8 +5,7 @@
     "database": "inr_node",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false,
-    "operatorsAliases": false
+    "logging": false
   },
   "test": {
     "username": "root",
@@ -14,8 +13,7 @@
     "database": "inr_node",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false,
-    "operatorsAliases": false
+    "logging": false
   },
   "production": {
     "username": "root",

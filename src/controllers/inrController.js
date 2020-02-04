@@ -33,7 +33,7 @@ module.exports = {
     });
   },
 
-  show(req, res){
+  show(req, res, next){
     inrQueries.getInr(req.params.id, (err, inr) => {
       if(err || inr == null){
         res.redirect(404, "/");
@@ -46,7 +46,7 @@ module.exports = {
   destroy(req, res, next){
     inrQueries.deleteInr(req.params.id, (err, inr) => {
       if(err){
-        res.redirect(500, `/inrs/${inr.id}`)
+        res.redirect(500, `/inrs/${req.params.id}`)
       } else {
         res.redirect(303, "/inrs")
       }
@@ -59,6 +59,16 @@ module.exports = {
         res.redirect(404, "/");
       } else {
         res.render("inrs/edit", {inr});
+      }
+    });
+  },
+
+  update(req, res, next){
+    inrQueries.updateInr(req.params.id, req.body, (err, inr) => {
+      if(err || inr == null){
+        res.redirect(404, `/inrs/${req.params.id}/edit`);
+      } else {
+        res.redirect(`inrs/${inr.id}`);
       }
     });
   }

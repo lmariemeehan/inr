@@ -4,7 +4,7 @@
   "description": "Web app to track inr results",
   "main": "src/server.js",
   "scripts": {
-    "test": "export NODE_ENV=test",
+    "test": "export NODE_ENV=test&& jasmine",
     "start": "node src/server.js"
   },
   "author": "Laura Meehan",
@@ -18,6 +18,9 @@
     "sequelize": "^5.21.3"
   },
   "devDependencies": {
+    "faker": "^4.1.0",
+    "jasmine": "^3.5.0",
+    "request": "^2.88.0",
     "sequelize-cli": "^5.5.1"
   }
 }
