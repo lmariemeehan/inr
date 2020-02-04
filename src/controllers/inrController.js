@@ -4,7 +4,7 @@ const Sequelize = require("sequelize");
 
 module.exports = {
 
-  index(req, res, next) {
+  index(req, res, next){
     inrQueries.getAllInrs((err, inrs) => {
       if(err){
         res.redirect(500, "static/index");
