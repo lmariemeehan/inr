@@ -8,6 +8,6 @@ router.post("/inrs/create", inrController.create);
 router.get("/inrs/:id", inrController.show);
 router.post("/inrs/:id/destroy", inrController.destroy);
 router.get("/inrs/:id/edit", inrController.edit);
-router.post("inrs/:id/update", inrController.update);
+router.post("/inrs/:id/update", inrController.update);
 
 module.exports = router;
