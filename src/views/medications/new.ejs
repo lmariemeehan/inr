@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>INRecord</title>
+  <!-- Bootstrap & CSS-->
+  <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/application.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">INRecord</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Inr Results
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/inrs">See ALL test results</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/inrs/new">Enter new Inr test result</a>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Medications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Symptoms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Appointments</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <h1 class="mt-4">New Medication</h1>
+
+    <form action="/inrs/create" method="post">
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" name="date">
+      </div>
+      <div class="form-group">
+        <label for="name">Medication:</label>
+        <input type="text" class="form-control" name="result" aria-describedby="resultHelp" placeholder="Enter name of medication">
+      </div>
+      <div class="form-group">
+        <label for="dose">Dose:</label>
+        <input type="text" class="form-control" name="dose" aria-describedby="doseHelp" placeholder="Enter medication dosage">
+      </div>
+      <div class="form-group">
+        <label for="notes">Ingredients:</label>
+        <textarea name="notes" rows="4" class="form-control" placeholder="Enter list of ingredients"></textarea>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      </div>
+    </form>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

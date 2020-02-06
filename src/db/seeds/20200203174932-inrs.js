@@ -24,7 +24,7 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    return queryInterface.bulkInsert("Inr", inrs, {});
+    return queryInterface.bulkInsert("Inrs", inrs, {});
   },
 
   down: (queryInterface, Sequelize) => {
@@ -35,6 +35,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-    return queryInterface.bulkDelete("Inr", null, {});
+    return queryInterface.bulkDelete("Inrs", null, {});
   }
 };
