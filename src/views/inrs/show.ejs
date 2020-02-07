@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>INRecord</title>
-  <!-- Bootstrap & CSS-->
-  <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/application.css">
+  <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/head.ejs') %>
 </head>
 <body>
   <!-- Navigation -->
@@ -28,8 +22,14 @@
               </div>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Medications</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Medications
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="medications">See all medications</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="medications/new">Enter new medication</a>
+            </div>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Symptoms</a>
