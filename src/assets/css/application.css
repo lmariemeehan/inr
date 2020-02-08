@@ -1,6 +1,5 @@
 body {
   padding-top: 54px;
-
 }
 
 h4.card-title {
@@ -9,4 +8,17 @@ h4.card-title {
 
 p.card-text {
   font-size: 18px;
+}
+
+.jumbotron {
+  background-color: #f8f9fa;
+}
+
+.display-2 span {
+  color: #EF4C45;
+}
+
+a.btn.btn-primary {
+  background-color: #EF4C45;
+  border-color: #EF4C45;
 }
