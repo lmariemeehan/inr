@@ -31,6 +31,7 @@
               <th scope="col">Medication</th>
               <th scope="col">Dose</th>
               <th scope="col">Ingredients</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -42,6 +43,14 @@
                 <td><%= medication.drug %></td>
                 <td><%= medication.dose %></td>
                 <td><%= medication.ingredients %></td>
+                <td>
+                  <a href="/medications/<%= medication.id %>/edit">
+                    <img src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/edit-731_kc2cih.svg" width="20" height="20" alt="">
+                  </a>
+                  <form style="display:initial"
+                  action="/medications/<%= medication.id %>/destroy" method="post">
+                  <input type="image" src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/delete-736_y3mdie.svg" alt="delete" width="20" height="20"></form>
+                </td>
             </tr>
             <% }) %>
           </tbody>
