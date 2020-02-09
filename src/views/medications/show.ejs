@@ -9,14 +9,46 @@
 
   <main class="container">
 
-    <h1 class="my-4"><%= medication.date %></h1>
-    <p><%= medication.drug %></p>
-    <p><%= medication.dose %></p>
-    <p><%= medication.ingredients %></p>
-    <a href="/medications/<%= medication.id %>/edit" class="btn btn-warning">Edit</a>
-    <form style="display:initial" action="/medications/<%= medication.id %>/destroy" method="post">
-      <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
+    <h1 class="my-4">Medication taken on: <%= medication.date %></h1>
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/medications/:id">Medication Entry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/medications">Show History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Feature to come!</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <form action="/medications/create" method="post">
+          <div class="form-group mt-2">
+            <label for="date">Date:</label>
+            <input type="date" name="date" value="<%= medication.date %>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="drug">Medication:</label>
+            <input type="text" class="form-control" name="drug" aria-describedby="drugNameHelp" value="<%= medication.drug %>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="dose">Dose:</label>
+            <input type="number" step="0.1" min=0 class="form-control" name="dose" aria-describedby="doseHelp" value="<%= medication.dose %>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="ingredients">Ingredients:</label>
+            <textarea name="ingredients" rows="4" class="form-control" readonly><%= medication.ingredients %></textarea>
+          </div>
+        </form>
+        <a href="/medications/<%= medication.id %>/edit" class="btn btn-warning">Edit</a>
+        <form style="display:initial" action="/medications/<%= medication.id %>/destroy" method="post">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/baseScripts.ejs') %>
