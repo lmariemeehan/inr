@@ -15,8 +15,25 @@ module.exports = {
         where: { email }
       })
       .then((user) => {
-        if(!user || !authHelper.comparePass())
+        if(!user || !authHelper.comparePass(password, user.password)) {
+          return done(null, false, { message: "Invalid email or password" });
+        }
+        return done(null, user);
       })
-    }))
+    }));
+
+    passport.serializeUser((user, callback) => {
+      callback(null, user.id);
+    });
+
+    passport.deserializeUser((id, callback) => {
+      User.findByPk(id)
+      .then((user) => {
+        callback(null, user);
+      })
+      .catch((err => {
+        callback(err, user);
+      }))
+    });
   }
 }
