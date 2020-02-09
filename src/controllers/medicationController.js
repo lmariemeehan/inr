@@ -69,7 +69,7 @@ module.exports = {
       if(err || medication == null){
         res.redirect(404, `/medications/${req.params.id}/edit`);
       } else {
-        res.redirect(`medications/${medication.id}`);
+        res.redirect(`/medications/${medication.id}`);
       }
     });
   }

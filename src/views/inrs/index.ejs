@@ -8,33 +8,51 @@
     <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/navbar.ejs') %>
 
     <h1 class="my-4">Inr Results</h1>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Result</th>
-          <th scope="col">Notes</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% inrs.forEach((inr) => { %>
-        <tr>
-          <td><a href="/inrs/<%= inr.id %>"><%= inr.date %></a></td>
-          <td><%= inr.result %></td>
-          <td><%= inr.notes %></td>
-          <td>
-            <a href="/inrs/<%= inr.id %>/edit">
-              <img src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/edit-731_kc2cih.svg" width="20" height="20" alt="">
-            </a>
-            <form style="display:initial"
-            action="/inrs/<%= inr.id %>/destroy" method="post">
-            <input type="image" src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/delete-736_y3mdie.svg" alt="delete" width="20" height="20"></form>
-          </td>
-        </tr>
-      <% }) %>
-      </tbody>
-    </table>
+
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/inrs/new">Create New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/inrs">Show History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Feature to come!</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Result</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% inrs.forEach((inr) => { %>
+          <tr>
+            <td><a href="/inrs/<%= inr.id %>"><%= inr.date %></a></td>
+            <td><%= inr.result %></td>
+            <td><%= inr.notes %></td>
+            <td>
+              <a href="/inrs/<%= inr.id %>/edit">
+                <img src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/edit-731_kc2cih.svg" width="20" height="20" alt="">
+              </a>
+              <form style="display:initial"
+              action="/inrs/<%= inr.id %>/destroy" method="post">
+              <input type="image" src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/delete-736_y3mdie.svg" alt="delete" width="20" height="20"></form>
+            </td>
+          </tr>
+        <% }) %>
+        </tbody>
+      </table>
+      </div>
+    </div>
 
   </main>
 

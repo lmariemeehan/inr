@@ -68,7 +68,7 @@ module.exports = {
       if(err || inr == null){
         res.redirect(404, `/inrs/${req.params.id}/edit`);
       } else {
-        res.redirect(`inrs/${inr.id}`);
+        res.redirect(`/inrs/${inr.id}`);
       }
     });
   }

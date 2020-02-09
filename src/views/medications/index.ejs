@@ -9,16 +9,45 @@
     <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/navbar.ejs') %>
 
     <h1 class="my-4">Medications</h1>
-    <ul class="list-group">
-      <% medications.forEach((medication) => { %>
-        <li class="list-group-item">
-          <a href="/medications/<%= medication.id %>"><%= medication.date %></a>
-          <p><%= medication.drug %></p>
-          <p><%= medication.dose %></p>
-          <p><%= medication.ingredients %></p>
-        </li>
-      <% }) %>
-    </ul>
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/medications/new">Create New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/medications">Show History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Feature to come!</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Medication</th>
+              <th scope="col">Dose</th>
+              <th scope="col">Ingredients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% medications.forEach((medication) => { %>
+              <tr>
+                <td>
+                  <a href="/medications/<%= medication.id %>"><%= medication.date %></a>
+                </td>
+                <td><%= medication.drug %></td>
+                <td><%= medication.dose %></td>
+                <td><%= medication.ingredients %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
   </main>
 

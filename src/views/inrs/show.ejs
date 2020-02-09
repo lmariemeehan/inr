@@ -9,13 +9,43 @@
 
   <main class="container">
 
-    <h1 class="my-4"><%= inr.date %></h1>
-    <p><%= inr.result %></p>
-    <p><%= inr.notes %></p>
-    <a href="/inrs/<%= inr.id %>/edit" class="btn btn-warning">Edit</a>
-    <form style="display:initial" action="/inrs/<%= inr.id %>/destroy" method="post">
-      <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
+    <h2 class="my-4">INR Result for: <%= inr.date %></h2>
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/inrs/new">Create New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/inrs">Show History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Feature to come!</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <form action="/inrs/create" method="post">
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" name="date" value="<%= inr.date %>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="result">INR result:</label>
+            <input type="text" class="form-control" name="result" aria-describedby="resultHelp" value="<%= inr.result %>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes:</label>
+            <textarea name="notes" rows="4" class="form-control" readonly><%= inr.notes %></textarea>
+          </div>
+        </form>
+        <a href="/inrs/<%= inr.id %>/edit" class="btn btn-warning">Edit</a>
+        <form style="display:initial" action="/inrs/<%= inr.id %>/destroy" method="post">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+
+      </div>
+    </div>
 
   </main>
 
