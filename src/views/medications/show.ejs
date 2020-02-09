@@ -4,15 +4,22 @@
   <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/head.ejs') %>
 </head>
 <body>
+  <!-- Navigation -->
   <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/navbar.ejs') %>
 
-  <main class="container my-4">
-    <h1><%= medication.date %></h1>
-    <p><%= medication.name %></p>
+  <main class="container">
+
+    <h1 class="my-4"><%= medication.date %></h1>
+    <p><%= medication.drug %></p>
     <p><%= medication.dose %></p>
-    <p><%= medication.notes %></p>
+    <p><%= medication.ingredients %></p>
+    <a href="/medications/<%= medication.id %>/edit" class="btn btn-warning">Edit</a>
+    <form style="display:initial" action="/medications/<%= medication.id %>/destroy" method="post">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
   </main>
 
   <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/baseScripts.ejs') %>
+
 </body>
 </html>

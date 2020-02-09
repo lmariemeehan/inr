@@ -25,8 +25,9 @@ module.exports = {
   addMedication(newMedication, callback){
     return Medication.create({
       date: newMedication.date,
-      result: newMedication.result,
-      notes: newMedication.notes
+      drug: newMedication.drug,
+      dose: newMedication.dose,
+      ingredients: newMedication.ingredients
     })
     .then((medication) => {
       callback(null, medication);
@@ -52,7 +53,7 @@ module.exports = {
     return Medication.findByPk(id)
     .then((medication) => {
       if(!medication){
-        return callback("Medication result not found");
+        return callback("Medication not found");
       }
 
       medication.update(updatedMedication, {

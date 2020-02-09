@@ -13,7 +13,7 @@
       <% medications.forEach((medication) => { %>
         <li class="list-group-item">
           <a href="/medications/<%= medication.id %>"><%= medication.date %></a>
-          <p><%= medication.name %></p>
+          <p><%= medication.drug %></p>
           <p><%= medication.dose %></p>
           <p><%= medication.ingredients %></p>
         </li>

@@ -9,12 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
-      name: {
+      drug: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       dose: {
+        allowNull: false,
         type: Sequelize.FLOAT
       },
       ingredients: {

@@ -21,8 +21,9 @@ module.exports = {
   create(req, res, next){
     let newMedication = {
       date: req.body.date,
-      result: req.body.result,
-      notes: req.body.notes
+      drug: req.body.drug,
+      dose: req.body.dose,
+      ingredients: req.body.ingredients
     };
     medicationQueries.addMedication(newMedication, (err, medication) => {
       if(err){
