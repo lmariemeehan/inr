@@ -21,6 +21,6 @@
     "database": "inr_node",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "use_env_variable": "mysql://bf5efc21b176a2:6b5c8015@us-cdbr-iron-east-04.cleardb.net/heroku_23c82ec11b287d1?reconnect=true"
+    "use_env_variable": "DATABASE_URL"
   }
 }
