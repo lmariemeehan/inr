@@ -1,7 +1,4 @@
 module.exports = {
-  validateInrs(req, res, next) {},
-
-  validateMedications(req, res, next) {},
 
   validateUsers(req, res, next) {
     if(req.method === "POST") {
