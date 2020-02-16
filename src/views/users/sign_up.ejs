@@ -7,38 +7,65 @@
     <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/navbar.ejs') %>
 
     <main class="container">
-      <h1 class="my-4">Sign up</h1>
+      <h1 class="my-4 text-center">Sign up</h1>
 
       <form action="/users" method="post">
-
-        <div class="form-group">
-          <label for="firstname">First name</label>
-          <input type="text" class="form-control" name="firstname" aria-describedby="firstnameHelp" placeholder="Enter first name">
+      <div class="card p-4 mx-auto" style="width: 48rem;">
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <input type="text" class="form-control" name="firstname" aria-describedby="firstnameHelp" placeholder="First name">
+            </div>
+          </div>
+          <div class="col">
+          <div class="form-group">
+            <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Last name">
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="lastname">Last name</label>
-          <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Enter last name">
         </div>
-
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email">
           <small class="text-muted" id="emailHelp">email address must be a valid address</small>
         </div>
 
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
-          <small class="text-muted" id="passwordHelp">password must match confirmation below</small>
+          <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Password">
+          <small class="text-muted" id="emailHelp">password must be at least 6 characters in length</small>
         </div>
 
         <div class="form-group">
-          <label for="passwordConfirmation">Password confirmation</label>
-          <input type="password" class="form-control" name="passwordConfirmation" aria-describedby="passwordHelp" placeholder="Enter password confirmation">
+          <input type="password" class="form-control" name="passwordConfirmation" aria-describedby="passwordHelp" placeholder="Re-enter password">
+          <small class="text-muted" id="passwordHelp">password must match password above</small>
         </div>
+      </div>
 
-        <button type="submit" class="btn btn-primary">Sign up</button>
+      <div class="card mt-2 p-4 text-white mx-auto" style="width: 48rem; background-color: #EF4C45;">
+        <h3 class="mb-4 text-center">What is your target INR range?</h3>
+        <div class="form-row">
+          <div class="col text-center">
+            <div class="form-group">
+              <label for="lowInr">Select your low INR target point:</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>2.0</option>
+                <option>2.5</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group text-center">
+              <label for="highInr">Select your high INR target point:</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>3.0</option>
+                <option>3.5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center my-4">
+        <button type="submit" class="btn btn-outline-primary btn-lg shadow-sm">Sign up</button>
+      </div>
 
       </form>
 

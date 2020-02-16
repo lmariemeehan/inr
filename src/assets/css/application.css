@@ -22,3 +22,14 @@ a.btn.btn-primary {
   background-color: #EF4C45;
   border-color: #EF4C45;
 }
+
+.btn.btn-outline-primary {
+  color: #EF4C45;
+  border-color: #EF4C45;
+}
+
+.btn.btn-outline-primary:hover {
+  color: #FFF;
+  background-color: #EF4C45;
+  border-color: #EF4C45;
+}
