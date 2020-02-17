@@ -12,14 +12,15 @@
       <form action="/users" method="post">
       <div class="card p-4 mx-auto" style="width: 48rem;">
         
-        <div class="form-group">
+      <div class="form-row">
+        <div class="form-group col">
           <input type="text" class="form-control" name="username" aria-describedby="firstnameHelp" placeholder="First name">
         </div>
 
-        <div class="form-group">
+        <div class="form-group col">
           <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Last name">
         </div>
-
+      </div>
         <div class="form-group">
           <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email">
           <small class="text-muted" id="emailHelp">email address must be a valid address</small>
@@ -36,7 +37,7 @@
         </div>
       </div>
 
-      <div class="card mt-2 p-4 text-white mx-auto" style="width: 48rem; background-color: #EF4C45;">
+      <div class="card mt-4 p-4 text-white mx-auto" style="width: 48rem; background-color: #EF4C45;">
         <h3 class="mb-4 text-center">What is your target INR range?</h3>
         <div class="form-row">
           <div class="col text-center">
