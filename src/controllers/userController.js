@@ -1,4 +1,6 @@
 const userQueries = require("../db/queries.users.js");
+const User = require("../db/models").User;
+const Sequelize = require("sequelize");
 const passport = require("passport");
 
 module.exports = {
@@ -9,7 +11,8 @@ module.exports = {
 
   create(req, res, next){
     let newUser = {
-      username: req.body.username,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
       passwordConfirmation: req.body.passwordConfirmation,
@@ -20,7 +23,7 @@ module.exports = {
     userQueries.createUser(newUser, (err, user) => {
       if(err){
         req.flash("error", err);
-        res.redirect("/users/sign_up");
+        res.redirect(500, "/users/sign_up");
       } else {
         passport.authenticate("local")(req, res, () => {
         req.flash("notice", "You've successfully signed in!");
@@ -51,5 +54,6 @@ module.exports = {
     req.flash("notice", "You've successfully signed out!");
     res.redirect("/");
   }
+
 
 }

@@ -22,10 +22,10 @@ module.exports = {
     }));
     app.use(flash());
     passportConfig.init(app);
-    app.use(morgan('combined'));
-    app.use(express.static(path.join(__dirname, "..", "assets")));
     app.use((req, res, next) => { res.locals.currentUser = req.user;
       next();
     })
+    app.use(morgan('combined'));
+    app.use(express.static(path.join(__dirname, "..", "assets")));
   }
 };
