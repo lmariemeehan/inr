@@ -1,5 +1,6 @@
 const inrQueries = require("../db/queries.inrs.js");
 const Inr = require("../db/models").Inr;
+const User = require("../db/models").User;
 const Sequelize = require("sequelize");
 
 module.exports = {
@@ -22,13 +23,16 @@ module.exports = {
     let newInr = {
       date: req.body.date,
       result: req.body.result,
-      notes: req.body.notes
-    };
+      notes: req.body.notes,
+      userId: req.user.id
+    }
     inrQueries.addInr(newInr, (err, inr) => {
       if(err){
+        console.log(err);
         res.redirect(500, "/inrs/new");
       } else {
-        res.redirect(303, `/inrs/${inr.id}`);
+        console.log(inr);
+        res.redirect(302, `/inrs/${inr.id}`);
       }
     });
   },
@@ -36,6 +40,7 @@ module.exports = {
   show(req, res, next){
     inrQueries.getInr(req.params.id, (err, inr) => {
       if(err || inr == null){
+        console.log(err);
         res.redirect(404, "/");
       } else {
         res.render("inrs/show", {inr});

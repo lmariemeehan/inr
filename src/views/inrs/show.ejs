@@ -9,6 +9,7 @@
 
   <main class="container">
 
+    <% if(currentUser) { %>
     <h2 class="my-4">INR Result for: <%= inr.date %></h2>
     <div class="card">
       <div class="card-header">
@@ -39,6 +40,9 @@
             <textarea name="notes" rows="4" class="form-control" readonly><%= inr.notes %></textarea>
           </div>
         </form>
+
+        <% } %>
+        
         <a href="/inrs/<%= inr.id %>/edit" class="btn btn-warning">Edit</a>
         <form style="display:initial" action="/inrs/<%= inr.id %>/destroy" method="post">
           <button type="submit" class="btn btn-danger">Delete</button>

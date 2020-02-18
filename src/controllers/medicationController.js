@@ -23,7 +23,8 @@ module.exports = {
       date: req.body.date,
       drug: req.body.drug,
       dose: req.body.dose,
-      ingredients: req.body.ingredients
+      ingredients: req.body.ingredients,
+      userId: req.user.id
     };
     medicationQueries.addMedication(newMedication, (err, medication) => {
       if(err){

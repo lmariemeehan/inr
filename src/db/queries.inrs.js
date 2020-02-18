@@ -26,7 +26,8 @@ module.exports = {
     return Inr.create({
       date: newInr.date,
       result: newInr.result,
-      notes: newInr.notes
+      notes: newInr.notes,
+      userId: newInr.userId
     })
     .then((inr) => {
       callback(null, inr);

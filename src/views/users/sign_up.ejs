@@ -7,20 +7,24 @@
     <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/navbar.ejs') %>
 
     <main class="container">
+
+    <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/messages.ejs') %>
+
       <h1 class="my-4 text-center">Sign up</h1>
 
       <form action="/users" method="post">
+
       <div class="card p-4 mx-auto" style="width: 48rem;">
-        
-      <div class="form-row">
-        <div class="form-group col">
-          <input type="text" class="form-control" name="username" aria-describedby="firstnameHelp" placeholder="First name">
+
+        <div class="form-row">
+          <div class="form-group col">
+            <input type="text" class="form-control" name="username" aria-describedby="firstnameHelp" placeholder="First name">
+          </div>
+          <div class="form-group col">
+            <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Last name">
+          </div>
         </div>
 
-        <div class="form-group col">
-          <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Last name">
-        </div>
-      </div>
         <div class="form-group">
           <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email">
           <small class="text-muted" id="emailHelp">email address must be a valid address</small>
@@ -35,6 +39,7 @@
           <input type="password" class="form-control" name="passwordConfirmation" aria-describedby="passwordHelp" placeholder="Re-enter password">
           <small class="text-muted" id="passwordHelp">password must match password above</small>
         </div>
+
       </div>
 
       <div class="card mt-4 p-4 text-white mx-auto" style="width: 48rem; background-color: #EF4C45;">

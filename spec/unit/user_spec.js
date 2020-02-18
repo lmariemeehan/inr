@@ -21,7 +21,7 @@ describe("User", () => {
       })
       .then((user) => {
         expect(user.email).toBe("user@example.com");
-        expect(user.password).toBe("helloworld");
+        expect(user.id).toBe(1);
         done();
       })
       .catch((err) => {

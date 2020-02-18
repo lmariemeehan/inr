@@ -9,10 +9,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT,
       allowNull: false
     },
-    notes: DataTypes.STRING
+    notes: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {});
   Inr.associate = function(models) {
-    // associations can be defined here
+    Inr.belongsTo(models.User, {
+      foreignKey: "userId",
+      onDelete: "CASCADE"
+    });
   };
   return Inr;
 };
