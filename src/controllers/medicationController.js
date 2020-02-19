@@ -1,5 +1,6 @@
 const medicationQueries = require("../db/queries.medications.js");
 const Medication = require("../db/models").Medication;
+const User = require("../db/models").User;
 const Sequelize = require("sequelize");
 
 module.exports = {

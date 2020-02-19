@@ -13,10 +13,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT,
       allowNull: false
     },
-    ingredients: DataTypes.STRING
+    ingredients: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {});
   Medication.associate = function(models) {
-    // associations can be defined here
+    Medication.belongsTo(models.User, {
+      foreignKey: "userId",
+      onDelete: "CASCADE"
+    });
   };
   return Medication;
 };

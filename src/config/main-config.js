@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const expressValidator = require('express-validator');
 const session = require("express-session");
 const flash = require("express-flash");
-const morgan = require("morgan");
 const passportConfig = require("./passport-config");
 
 module.exports = {
@@ -25,7 +24,6 @@ module.exports = {
     app.use((req, res, next) => { res.locals.currentUser = req.user;
       next();
     })
-    app.use(morgan('combined'));
     app.use(express.static(path.join(__dirname, "..", "assets")));
   }
 };

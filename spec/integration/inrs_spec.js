@@ -3,12 +3,25 @@ const server = require("../../src/server");
 const base = "http://localhost:3000/inrs/";
 const sequelize = require("../../src/db/models/index").sequelize;
 const Inr = require("../../src/db/models").Inr;
+const User = require("../../src/db/models").User;
 
 describe("routes : inrs", () => {
   beforeEach((done) => {
     this.inr;
+    this.user;
     sequelize.sync({force: true}).then((res) => {
 
+      User.create({
+        firstname: "Laura",
+        lastname: "Meehan",
+        email: "mysupercoolemail@gmail.com",
+        password: "helloworld",
+        lowInr: "2.0",
+        highInr: "3.0"
+      })
+      .then((user) => {
+        this.user = user;
+      
       Inr.create({
         date: "2020-02-02",
         result: "2.2",
@@ -22,6 +35,7 @@ describe("routes : inrs", () => {
         console.log(err);
         done();
       });
+     })
     });
   });
 

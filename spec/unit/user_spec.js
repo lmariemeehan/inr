@@ -16,8 +16,12 @@ describe("User", () => {
   describe("#create()", () => {
     it("should create a User object with a valid email and password", (done) => {
       User.create({
+        firstname: "laura",
+        lastname: "Meehan",
         email: "user@example.com",
-        password: "helloworld"
+        password: "helloworld",
+        lowInr: "2.0",
+        highInr: "3.0"
       })
       .then((user) => {
         expect(user.email).toBe("user@example.com");
@@ -32,8 +36,12 @@ describe("User", () => {
 
     it("should not create a user with an invalid email or password", (done) => {
       User.create({
+        firstname: "Laura",
+        lastname: "Meehan",
         email: "This is clearly not an email address",
-        password: "helloworld"
+        password: "helloworld",
+        lowInr: "2.0",
+        highInr: "3.0"
       })
       .then((user) => {
         done();
