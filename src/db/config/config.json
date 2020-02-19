@@ -18,7 +18,7 @@
   "production": {
     "username": "b175fdf03ef24a",
     "password": "757ed661",
-    "database": "inr_node",
+    "database": "heroku_1748d2757d02541",
     "host": "us-cdbr-iron-east-04.cleardb.net",
     "dialect": "mysql",
     "use_env_variable": "DATABASE_URL",
