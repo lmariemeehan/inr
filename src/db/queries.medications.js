@@ -27,7 +27,8 @@ module.exports = {
       date: newMedication.date,
       drug: newMedication.drug,
       dose: newMedication.dose,
-      ingredients: newMedication.ingredients
+      ingredients: newMedication.ingredients,
+      userId: newMedication.userId
     })
     .then((medication) => {
       callback(null, medication);

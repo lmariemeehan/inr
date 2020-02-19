@@ -29,6 +29,7 @@ module.exports = {
     };
     medicationQueries.addMedication(newMedication, (err, medication) => {
       if(err){
+        console.log(err);
         res.redirect(500, "/medications/new");
       } else {
         res.redirect(303, `/medications/${medication.id}`);
