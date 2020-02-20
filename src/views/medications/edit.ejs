@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/head.ejs') %>
+    <%- include('../static/partials/head.ejs') %>
   </head>
   <body>
-    <%- include('/Users/laurameehan/Web_Projects/inr/src/views/static/partials/navbar.ejs') %>
+
+    <%- include('../static/partials/navbar.ejs') %>
 
     <main class="container">
       <h1 class="my-4"><span><img src="https://res.cloudinary.com/laurameehan/image/upload/v1582092289/Drug_kytmxk.svg" width="40" height="40" class="mr-2" /></span>Edit Medication Entry</h1>
@@ -46,5 +47,8 @@
         </div>
       </div>
     </main>
+
+    <%- include('../static/partials/baseScripts.ejs') %>
+
   </body>
 </html>
