@@ -6,6 +6,7 @@
 <body>
   <!-- Navigation -->
   <%- include('../static/partials/navbar.ejs') %>
+  <%- include('../static/partials/messages.ejs') %>
 
   <main class="container">
 
@@ -27,6 +28,7 @@
       </div>
       <div class="card-body">
       <form action="/inrs/create" method="post">
+        <h5 class="mt-2 mb-3">Your target inr range is: <%= currentUser.lowInr %> - <%= currentUser.highInr %></h5>
         <div class="form-group mt-2">
           <label for="date">Date:</label>
           <input type="date" name="date">
