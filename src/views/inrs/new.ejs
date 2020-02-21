@@ -28,7 +28,7 @@
       </div>
       <div class="card-body">
       <form action="/inrs/create" method="post">
-        <h5 class="mt-2 mb-3">Your target inr range is: <%= currentUser.lowInr %> - <%= currentUser.highInr %></h5>
+        <h5 class="mt-2 mb-4 text-center">Your target inr range is between: <%= currentUser.lowInr %> - <%= currentUser.highInr %></h5>
         <div class="form-group mt-2">
           <label for="date">Date:</label>
           <input type="date" name="date">

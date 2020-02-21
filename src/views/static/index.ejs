@@ -55,32 +55,35 @@
     <% } else { %>
       <h2 class="d-flex justify-content-center mt-5">Hi, <%= currentUser.firstname %>!</h2>
       <h3 class="d-flex justify-content-center mt-3">Here are some interesting articles to help you learn more about your Inr, vitamin K levels, and Warfarin.</h3>
-      <ul class="mt-3 list-unstyled">
-        <li class="media">
-          <img src="/images/blood-49.svg" width="40" height="40" class="mr-3">
-          <div class="media-body text-center">
-            <a href="https://natfonline.org/2017/07/guide-inr-levels/">A guide to INR levels</a>
-          </div>
-        </li>
-        <li class="media">
-          <i class="fas fa-utensils fa-2x"></i>
-          <div class="media-body">
-            <a href="http://www.coumadin.bmscustomerconnect.com/servlet/servlet.FileDownload?file=00Pi000000bxvTFEAY">Foods with Vitamin K List</a>
-          </div>
-        </li>
-        <li class="media">
-          <img src="" alt="">
-          <div class="media-body">
-            <a href="https://www.uptodate.com/contents/warfarin-coumadin-beyond-the-basics">Warfarin(Coumadin) - Beyond the Basics</a>
-          </div>
-        </li>
-        <li class="media">
-          <i class="fas fa-diagnoses fa-2x"></i>
-          <div class="media-body">
-            <a class="pl-3" href="https://triagelogic.com/wp-content/uploads/2018/03/PT-INR-LEVELS.pdf">Symptoms of a low or high Inr level</a>
-          </div>
-        </li>
-      </ul>
+      
+      <div class="d-flex justify-content-center mt-5">
+        <ul class="mt-3 list-unstyled">
+          <li class="media">
+            <img src="/images/blood-49.svg" width="40" height="40">
+            <div class="media-body">
+              <a class="pl-3" href="https://natfonline.org/2017/07/guide-inr-levels/">A guide to INR levels</a>
+            </div>
+          </li>
+          <li class="media my-4">
+            <i class="fas fa-utensils fa-2x"></i>
+            <div class="media-body">
+              <a class="pl-3" href="http://www.coumadin.bmscustomerconnect.com/servlet/servlet.FileDownload?file=00Pi000000bxvTFEAY">Foods with Vitamin K List</a>
+            </div>
+          </li>
+          <li class="media my-4">
+            <img src="/images/diagnosis-1786862.svg" width="40" height="40">
+            <div class="media-body">
+              <a class="pl-3" href="https://www.uptodate.com/contents/warfarin-coumadin-beyond-the-basics">Warfarin(Coumadin) - Beyond the Basics</a>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-diagnoses fa-2x"></i>
+            <div class="media-body">
+              <a class="pl-3" href="https://triagelogic.com/wp-content/uploads/2018/03/PT-INR-LEVELS.pdf">Symptoms of a low or high Inr level</a>
+            </div>
+          </li>
+        </ul>
+      </div>
 
     <% } %>
   </main>
