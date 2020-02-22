@@ -9,9 +9,9 @@
 
   <!-- Page Content -->
 
-  <main class="container-fluid">
-
     <% if(!currentUser) { %>
+    <main class="container-fluid">
+
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4 text-center">
       <h1 class="display-2">Welcome to <span class="display-1">INR</span>ecord</h1>
@@ -51,8 +51,10 @@
 
     </section>
     </div>
+    </main>
     <!-- /.row -->
     <% } else { %>
+      <main class="container">
       <h2 class="d-flex justify-content-center mt-5">Hi, <%= currentUser.firstname %>!</h2>
       <h3 class="d-flex justify-content-center mt-3">Here are some interesting articles to help you learn more about your Inr, vitamin K levels, and Warfarin.</h3>
       
@@ -84,7 +86,7 @@
           </li>
         </ul>
       </div>
-
+    </main>
     <% } %>
   </main>
   <!-- /.container -->

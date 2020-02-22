@@ -5,7 +5,7 @@ const helper = require("../auth/helpers");
 
 router.get("/inrs/", inrController.index);
 router.get("/inrs/new", inrController.new);
-router.post("/inrs/create",
+router.post("/inrs/create", 
   helper.ensureAuthenticated,
   inrController.create);
 router.get("/inrs/:id", inrController.show);

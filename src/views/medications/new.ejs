@@ -6,7 +6,9 @@
 <body>
   <!-- Navigation -->
   <%- include('../static/partials/navbar.ejs') %>
+  <%- include('../static/partials/messages.ejs') %>
 
+  <% if(currentUser) { %>
   <main class="container">
 
     <h1 class="my-4"><span><img src="https://res.cloudinary.com/laurameehan/image/upload/v1582092289/Drug_kytmxk.svg" width="40" height="40" class="mr-2" /></span>New Medication</h1>
@@ -49,6 +51,14 @@
     </div>
 
   </main>
+
+  <% } else { %>
+
+    <div class="alert alert-warning mt-5" role="alert">
+      You must sign in first to add a medication entry.
+    </div>
+
+  <% } %>
 
   <%- include('../static/partials/baseScripts.ejs') %>
 
