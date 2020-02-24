@@ -38,6 +38,12 @@ h5 {
   color: #EF4C45;
 }
 
+hr {
+  max-width: 3.75rem;
+  border-width: 0.2rem;
+  border-color: #EF4C45;
+}
+
 .fa-vial {
   color: #EF4C45;
 }
