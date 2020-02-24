@@ -55,40 +55,44 @@
     <!-- /.row -->
     <% } else { %>
       <main class="container">
-      <h2 class="d-flex justify-content-center mt-5">Hi, <%= currentUser.firstname %>!</h2>
-      <h3 class="d-flex justify-content-center mt-3">Here are some interesting articles to help you learn more about your INR levels, vitamin K amounts, and Warfarin.</h3>
-      
-      <div class="d-flex justify-content-center mt-5">
-        <ul class="mt-3 list-unstyled">
-          <li class="media">
-            <img src="/images/blood-49.svg" width="40" height="40">
-            <div class="media-body">
-              <a class="pl-3" href="https://natfonline.org/2017/07/guide-inr-levels/">A guide to INR levels</a>
+
+      <h2 class="d-flex justify-content-center my-5">Hi, <%= currentUser.firstname %>!</h2>
+      <h3 class="d-flex justify-content-center mt-3">Here is some interesting information to help you learn more about your INR levels, vitamin K amounts, and Warfarin.</h3>
+
+      <div id="articles">
+        <div class="row mt-3">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+              <i class="fas fa-vial fa-4x"></i>
+              <h3 class="mt-4 mb-2">INR Levels</h3>
+              <a class="text-muted mb-0" href="https://natfonline.org/2017/07/guide-inr-levels/">A guide to INR levels</a>
             </div>
-          </li>
-          <li class="media my-4">
-            <i class="fas fa-utensils fa-2x"></i>
-            <div class="media-body">
-              <a class="pl-3" href="http://www.coumadin.bmscustomerconnect.com/servlet/servlet.FileDownload?file=00Pi000000bxvTFEAY">Foods with Vitamin K List</a>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+              <i class="fas fa-utensils fa-4x"></i>
+              <h3 class="mt-4 mb-2">Vitamin K</h3>
+              <a class="text-muted mb-0" href="http://www.coumadin.bmscustomerconnect.com/servlet/servlet.FileDownload?file=00Pi000000bxvTFEAY">Foods with Vitamin K List</a>
             </div>
-          </li>
-          <li class="media my-4">
-            <img src="/images/diagnosis-1786862.svg" width="40" height="40">
-            <div class="media-body">
-              <a class="pl-3" href="https://www.uptodate.com/contents/warfarin-coumadin-beyond-the-basics">Warfarin(Coumadin) - Beyond the Basics</a>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+              <i class="fas fa-pills fa-4x"></i>
+              <h3 class="mt-4 mb-2">Warfarin</h3>
+              <a class="text-muted mb-0" href="https://www.uptodate.com/contents/warfarin-coumadin-beyond-the-basics">Warfarin - Beyond the Basics</a>
             </div>
-          </li>
-          <li class="media">
-            <i class="fas fa-diagnoses fa-2x"></i>
-            <div class="media-body">
-              <a class="pl-3" href="https://triagelogic.com/wp-content/uploads/2018/03/PT-INR-LEVELS.pdf">Symptoms of a low or high Inr level</a>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="mt-5">
+              <i class="fas fa-diagnoses fa-4x mb-4"></i>
+              <h3 class="mb-2">Symptoms</h3>
+              <a class="text-muted mb-0" href="https://triagelogic.com/wp-content/uploads/2018/03/PT-INR-LEVELS.pdf">Imbalanced INR Symptoms</a>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </main>
     <% } %>
-  </main>
   <!-- /.container -->
 
   <%- include('partials/baseScripts') -%>
