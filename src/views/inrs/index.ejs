@@ -41,9 +41,9 @@
             <td><%= inr.notes %></td>
             <td>
               <a href="/inrs/<%= inr.id %>/edit">
-                <img src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/edit-731_kc2cih.svg" width="20" height="20" alt="">
+                <img src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/edit-731_kc2cih.svg" width="20" height="20" alt="edit">
               </a>
-              <form style="display:initial"
+              <form class="mt-4" style="display:initial"
               action="/inrs/<%= inr.id %>/destroy" method="post">
               <input type="image" src="https://res.cloudinary.com/laurameehan/image/upload/v1581143710/delete-736_y3mdie.svg" alt="delete" width="20" height="20"></form>
             </td>
