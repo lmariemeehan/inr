@@ -3,19 +3,25 @@ body {
 }
 
 h4.card-title {
-  font-size: 25px;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #EF4C45;
 }
 
 p.card-text {
-  font-size: 18px;
+  font-size: 1em;
 }
 
 .jumbotron {
   background-color: #f8f9fa;
 }
 
-.display-2 span {
+.jumbotron span {
   color: #EF4C45;
+}
+
+.jumbotron h1 {
+  letter-spacing: 0.05em;
 }
 
 a.btn.btn-primary {
@@ -34,7 +40,7 @@ a.btn.btn-primary {
   border-color: #EF4C45;
 }
 
-h5 {
+h5, .fa-vial, .fa-pills, .fa-utensils, .fa-diagnoses, .fa-calendar-check {
   color: #EF4C45;
 }
 
@@ -42,20 +48,4 @@ hr {
   max-width: 3.75rem;
   border-width: 0.2rem;
   border-color: #EF4C45;
-}
-
-.fa-vial {
-  color: #EF4C45;
-}
-
-.fa-pills {
-  color: #EF4C45;
-}
-
-.fa-utensils {
-  color: #EF4C45;
-}
-
-.fa-diagnoses {
-  color: #EF4C45;
 }
