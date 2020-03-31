@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('../static/partials/head.ejs') %>
+</head>
+<body>
+  <!-- Navigation -->
+  <%- include('../static/partials/navbar.ejs') %>
+
+  <main class="container">
+
+    <h1 class="my-4"><span><i class="far fa-calendar-check fa-3x mb-3"></i></span>Appointment scheduled for: <%= appointment.when %></h1>
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/appointments/:id">Appointment Entry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/appointments">Show History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Feature to come!</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <form action="/appointments/create" method="post">
+            <div class="form-row mt-2">
+                <div class="form-group col">
+                    <label for="when">When:</label>
+                    <input type="date" name="when" class="form-control" value="<%= appointment.when%>" readonly>
+                </div>
+                <div class="form-group col">
+                    <label for="at">At:</label>
+                    <input type="time" name="at" class="form-control" value="<%= appointment.at%>" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="what">What:</label>
+                <input type="text" id="what" class="form-control" value="<%= appointment.what%>" placeholder="type of appointment" readonly>
+            </div>
+            <div class="form-group">
+              <label for="with">With:</label>
+              <input type="text" id="with" class="form-control" value="<%= appointment.with%>" placeholder="name of provider or clinic" readonly>
+            </div>
+            <div class="form-group">
+                <label for="where">Where:</label>
+                <input type="text" id="where" class="form-control" value="<%= appointment.where%>" placeholder="clinic's location" readonly>
+            </div>
+        </form>
+        <a href="/appointments/<%= appointment.id %>/edit" class="btn btn-warning">Edit</a>
+        <form style="display:initial" action="/appointments/<%= appointment.id %>/destroy" method="post">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../static/partials/baseScripts.ejs') %>
+
+</body>
+</html>
