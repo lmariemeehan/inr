@@ -4,6 +4,7 @@ const User = require("../db/models/").User;
 const Sequelize = require("sequelize");
 
 module.exports = {
+
     index(req, res, next) {
         appointmentQueries.getAllAppointments((err, appointments) => {
             if(err) {
@@ -20,19 +21,20 @@ module.exports = {
 
     create(req, res, next) {
         let newAppointment = {
-            what: req.body.what,
-            with: req.body.with,
             when: req.body.when,
             at: req.body.at,
+            what: req.body.what,
+            with: req.body.with,
             where: req.body.where,
             userId: req.user.id
         } 
         appointmentQueries.addAppointment(newAppointment, (err, appointment) => {
             if(err) {
+                console.log(err);
                 res.redirect(500, "/appointments/new");
             } else {
                 console.log(appointment);
-                res.render(302, `/appointments/${appointment.id}`);
+                res.render(303, `/appointments/${appointment.id}`);
             }
         });
     },

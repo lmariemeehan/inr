@@ -8,17 +8,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      when: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      at: {
+        allowNull: false,
+        type: Sequelize.TIME
+      },
       what: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       with: {
         type: Sequelize.STRING
-      },
-      when: {
-        type: Sequelize.DATE
-      },
-      at: {
-        type: Sequelize.TIME
       },
       where: {
         type: Sequelize.STRING
