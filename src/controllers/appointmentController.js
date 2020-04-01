@@ -27,14 +27,14 @@ module.exports = {
             with: req.body.with,
             where: req.body.where,
             userId: req.user.id
-        } 
+        }; 
         appointmentQueries.addAppointment(newAppointment, (err, appointment) => {
             if(err) {
                 console.log(err);
                 res.redirect(500, "/appointments/new");
             } else {
                 console.log(appointment);
-                res.render(303, `/appointments/${appointment.id}`);
+                res.redirect(303, `/appointments/${appointment.id}`);
             }
         });
     },

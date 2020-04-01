@@ -13,7 +13,7 @@ module.exports = {
     },
 
     getAppointment(id, callback) {
-        return Appointment.finkByPk(id)
+        return Appointment.findByPk(id)
         .then((appointment) => {
             callback(null, appointment);
         })
@@ -24,10 +24,10 @@ module.exports = {
     
     addAppointment(newAppointment, callback) {
         return Appointment.create({
-            what: newAppointment.what,
-            with: newAppointment.with,
             when: newAppointment.when,
             at: newAppointment.at,
+            what: newAppointment.what,
+            with: newAppointment.with,
             where: newAppointment.where,
             userId: newAppointment.userId
         })
