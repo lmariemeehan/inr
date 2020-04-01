@@ -49,3 +49,7 @@ hr {
   border-width: 0.2rem;
   border-color: #EF4C45;
 }
+
+#appointment-icon {
+  font-size: 40px;
+}

@@ -1,11 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Appointment = sequelize.define('Appointment', {
-    what: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    with: DataTypes.STRING,
     when: {
       type: DataTypes.DATE,
       allowNull: false
@@ -14,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TIME,
       allowNull: false
     },
+    what: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    with: DataTypes.STRING,
     where: DataTypes.STRING,
     userId: {
       type: DataTypes.INTEGER,

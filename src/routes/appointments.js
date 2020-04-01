@@ -8,6 +8,6 @@ router.post("/appointments/create", appointmentController.create);
 router.get("/appointments/:id", appointmentController.show);
 router.post("/appointments/:id/destroy", appointmentController.destroy);
 router.get("/appointments/:id/edit", appointmentController.edit);
-router.post("/appointsments/:id/update", appointmentController.update);
+router.post("/appointments/:id/update", appointmentController.update);
 
 module.exports = router;
