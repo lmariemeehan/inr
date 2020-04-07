@@ -65,7 +65,7 @@ module.exports = {
             if(err || appointment == null) {
                 res.redirect(404, "/");
             } else {
-                res.redirect("appointments/edit", {appointment});
+                res.render("appointments/edit", {appointment});
             }
         });
     },
