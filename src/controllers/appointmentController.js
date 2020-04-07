@@ -25,7 +25,7 @@ module.exports = {
             at: req.body.at,
             what: req.body.what,
             with: req.body.with,
-            where: req.body.where,
+            location: req.body.location,
             userId: req.user.id
         }; 
         appointmentQueries.addAppointment(newAppointment, (err, appointment) => {
@@ -33,7 +33,6 @@ module.exports = {
                 console.log(err);
                 res.redirect(500, "/appointments/new");
             } else {
-                console.log(appointment);
                 res.redirect(303, `/appointments/${appointment.id}`);
             }
         });

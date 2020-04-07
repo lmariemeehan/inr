@@ -28,7 +28,7 @@ module.exports = {
             at: newAppointment.at,
             what: newAppointment.what,
             with: newAppointment.with,
-            where: newAppointment.where,
+            location: newAppointment.location,
             userId: newAppointment.userId
         })
         .then((appointment) => {

@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     with: DataTypes.STRING,
-    where: DataTypes.STRING,
+    location: DataTypes.STRING,
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false

@@ -23,7 +23,7 @@ module.exports = {
       with: {
         type: Sequelize.STRING
       },
-      where: {
+      location: {
         type: Sequelize.STRING
       },
       createdAt: {
